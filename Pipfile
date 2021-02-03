@@ -7,8 +7,10 @@ name = "pypi"
 django = "==2.2.3"
 pymysql = "*"
 markdown = "*"
+gunicorn = "*"
 
 [dev-packages]
+fabric = "*"
 
 [requires]
 python_version = "3.9"

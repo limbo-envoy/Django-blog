@@ -24,8 +24,9 @@ SECRET_KEY = 'nrsquc%e$f*mfos%b&m9uq0#p!iii&m7)e8m3a*59!s4+tf8p='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.aiwan.press']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.aiwan.press', '144.34.167.216']
 
 
 # Application definition
