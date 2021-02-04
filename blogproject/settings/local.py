@@ -1,6 +1,6 @@
 from blogproject.settings.common import *
 
 
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = 'development-secret-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
