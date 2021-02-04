@@ -39,10 +39,10 @@ def deploy(c):
         c.run(cmd)
 
     # 安装依赖，迁移数据库，收集静态文件
-    # with c.cd(project_root_path):
+    with c.cd(project_root_path):
         # c.run('/home/bwg/.local/bin/pipenv install --deploy --ignore-pipfile')
-        # c.run('/home/bwg/.local/bin/pipenv run python manage.py migrate')
-        # c.run('/home/bwg/.local/bin/pipenv run python manage.py collectstatic --noinput')
+        c.run('/home/bwg/.local/bin/pipenv run python manage.py migrate')
+        c.run('/home/bwg/.local/bin/pipenv run python manage.py collectstatic --noinput')
 
     # 重新启动应用
     with c.cd(supervisor_conf_path):
