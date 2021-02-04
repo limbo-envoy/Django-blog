@@ -8,9 +8,11 @@ django = "==2.2.3"
 pymysql = "*"
 markdown = "*"
 gunicorn = "*"
+fabric = "*"
 
 [dev-packages]
 fabric = "*"
+invoke = "*"
 
 [requires]
 python_version = "3.9"
