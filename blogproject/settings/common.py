@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'blogproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+_credentials = os.path.join(BASE_DIR, '_credentials')
 from _credentials import mysql_config
 DATABASES = {
     # 'default': {
