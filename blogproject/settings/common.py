@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'blogproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+from _credentials import mysql_config
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -85,11 +85,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
-        'USER': 'bbs',
-        'PASSWORD': 'bbs123',
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
+        'NAME': mysql_config['NAME'],
+        'USER': mysql_config['USER'],
+        'PASSWORD': mysql_config['PASSWORD'],
+        'HOST': mysql_config['HOST'],
+        'PORT': mysql_config['PORT'],
         'CHARSET': 'utf8mb4'
     }
 }
