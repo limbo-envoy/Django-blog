@@ -8,6 +8,8 @@ django = "==2.2.3"
 pymysql = "*"
 markdown = "*"
 gunicorn = "*"
+faker = "*"
+django-pure-pagination = "*"
 
 [dev-packages]
 invoke = "*"

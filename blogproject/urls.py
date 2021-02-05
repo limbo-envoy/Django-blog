@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from blog.feeds import AllPostsRssFeed
 
 # ... the rest of your URLconf goes here ...
 
@@ -24,5 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('blog.urls', "blog"), namespace='blog')),
     path('', include(('comments.urls', "comments"), namespace='comments')),
+    # 记得在顶部引入 AllPostsRssFeed
+    path('all/rss/', AllPostsRssFeed(), name='rss'),
 ]
 urlpatterns += staticfiles_urlpatterns()
