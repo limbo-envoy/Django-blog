@@ -78,6 +78,22 @@ class TagView(IndexView):
         return super(TagView, self).get_queryset().filter(tags=tag)
 
 
+from django.contrib import messages
+from django.shortcuts import redirect
+from django.db.models import Q
+
+
+def search(request):
+    q = request.GET.get('q')
+
+    if not q:
+        error_msg = "请输入搜索关键词"
+        messages.add_message(request, messages.ERROR, error_msg, extra_tags='danger')
+        return redirect('blog:index')
+
+    post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
+    return render(request, 'blog/index.html', {'post_list': post_list})
+
 # def index(request):
 #     post_list = Post.objects.all().order_by('-created_time')
 #     return render(request, 'blog/index.html', context={'post_list': post_list})
